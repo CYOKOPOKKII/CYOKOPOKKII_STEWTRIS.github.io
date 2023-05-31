@@ -1,0 +1,245 @@
+/* NAVBAR */
+:root{
+    --bg-color: #CC543A;
+    --main-color: #F9BF45;
+    --nav-item-width: 100px;
+    --nav-item-height: 60px;
+    --nav-item-border-width: 6px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body{
+    width: 100vw;
+    height: 100vw;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    background: var(--bg-color);
+}
+
+.nav{
+    /* position: relative; */
+    position: sticky;
+    background: #FCFAF2;
+    border-radius: 0 0 60px 60PX;
+    font-size: 0;
+    padding: var(--nav-item-border-width);
+    z-index: 1000;
+}
+
+.nav-item{
+    width: var(--nav-item-width);
+    height: var(--nav-item-height);
+    font-size: 14px;
+    color: var(--main-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+}
+
+.nav>input[type="radio"]{
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.nav>input[type="radio"]:checked + label{
+    color: white;
+}
+
+.tracker{
+    width: var(--nav-item-width);
+    height: var(--nav-item-height);
+    background: var(--main-color);
+    z-index: -1;
+    position: absolute;
+    left: var(--nav-item-border-width);
+    top: var(--nav-item-border-width);
+    border-radius: 48px;
+    transition: transform .3s ease-in-out;
+}
+
+#nav-item-opt-2:checked ~ .tracker{
+    transform: translateX(calc(var(--nav-item-width)));
+}
+
+#nav-item-opt-3:checked ~ .tracker{
+    transform: translateX(calc(var(--nav-item-width)*2));
+}
+
+#nav-item-opt-4:checked ~ .tracker{
+    transform: translateX(calc(var(--nav-item-width)*3));
+}
+
+#nav-item-opt-5:checked ~ .tracker{
+    transform: translateX(calc(var(--nav-item-width)*4));
+}
+
+.navbar-center{
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar-collapse-center{
+    text-align: center;
+}
+
+/* CONTENT1*/
+.image-button {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.image-button img {
+    transition: filter 0.3s ease;
+}
+    
+.image-button:hover img {
+    filter: brightness(70%);
+}
+
+/* CONTENT3*/
+/* .food-modal{
+    background-color: transparent;
+    border-color: transparent;
+} */
+
+
+.box-fall{
+    position: fixed;
+    display: flex;
+    background-color: #563F2E;
+    border-color: #563F2E;
+    justify-content: center;
+    align-items: center;
+    top: 1500px;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+}
+
+.box-fall img{
+    /* 絕對定位 */
+    position: absolute;
+    line-height: 10000px;
+    margin: 0px;
+    /* 默認狀態:旋轉180度、不透明度為0 */
+    transform: rotate(360deg);
+    /* 執行動畫: 動畫名 時長 線性的 無限次播放 */
+    animation: move 100s linear infinite;
+}
+
+
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+/* 為每一個sapn設置動畫延遲 */
+/* 第一個不用改，直接設置第二個 */
+.box-fall span:nth-child(2){
+    animation-delay: 0.02s;
+}
+.box-fall span:nth-child(3){
+    animation-delay: 0.05s;
+}
+.box-fall span:nth-child(4){
+    animation-delay: 0.1s;
+}
+
+
+.box-fall span:nth-child(1)::before{
+    content: "";
+    position: absolute;
+    left: 120px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-color: #FCFAF2;
+    /* background-color: red; */
+    transform: rotate(360deg);
+    animation: move 5s linear infinite;
+}
+
+.box-fall span:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    left: 80px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-color: #FCFAF2;
+    /* background-color: red; */
+    transform: rotate(360deg);
+    animation: move 5s linear infinite;
+}
+
+.box-fall span:nth-child(3)::before{
+    content: "";
+    position: absolute;
+    left: 120px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-color: #FCFAF2;
+    /* background-color: red; */
+    transform: rotate(360deg);
+    animation: move 5s linear infinite;
+}
+
+.box-fall span:nth-child(4)::before{
+    content: "";
+    position: absolute;
+    left: 100px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-color: #FCFAF2;
+    /* background-color: red; */
+    transform: rotate(360deg);
+    animation: move 5s linear infinite;
+}
+
+
+/* 分別為三個設置顏色 */
+.box-fall span::before{
+    background-color: #FCFAF2;
+    border-color: #FCFAF2;
+}
+.box-fall span::before{
+    background-color: #FCFAF2;
+    border-color: #FCFAF2;
+}
+.box-fall span::before{
+    background-color: #FCFAF2;
+    border-color: #FCFAF2;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+/* 定義動畫 */
+@keyframes move {
+    0%{
+        bottom: 100%;
+        /* transform: rotate(0deg); */
+    }
+    100%{
+        bottom: 25%;
+        /* transform: rotate(360deg); */
+    }
+}
